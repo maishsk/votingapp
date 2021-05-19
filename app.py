@@ -104,7 +104,7 @@ def getheavyvotes():
     string_chipotle = readvote("chipotle")
     string_votes = '[{"name": "outback", "value": ' + string_outback + '},' + '{"name": "bucadibeppo", "value": ' + string_bucadibeppo + '},' + '{"name": "ihop", "value": '  + string_ihop + '}, ' + '{"name": "chipotle", "value": '  + string_chipotle + '}]'
     print("You invoked the getheavyvotes API. I am eating 100MB * " + str(memstressfactor) + " at every votes request")
-    memeater[randrange(10000)] = bytearray(1024 * 1024 * 100 * memstressfactor) # eats 100MB * memstressfactor
+    memeater[randrange(10000)] = bytearray(1024 * 1024 * 100 * memstressfactor, encoding='utf8') # eats 100MB * memstressfactor
     print("You invoked the getheavyvotes API. I am eating some cpu * " + str(cpustressfactor) + " at every votes request")
     processes = cpu_count()
     pool = Pool(processes)
