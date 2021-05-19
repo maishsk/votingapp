@@ -17,7 +17,7 @@ This is a classic Python application. To use it with AWS App Runner you can buil
 
 #### AWS App Runner console deployment
 
-First, please run the `preparation.sh` script in this repository to create the DynamoDB table and the various roles and policies required. Also, clone this repo in your GH account. Then move to the AWS App Runner console.
+First, please run the `prepare.sh` script in this repository to create the DynamoDB table and the various roles and policies required. Also, clone this repo in your GH account. Then move to the AWS App Runner console.
 
 - Click on `Create Service` 
 - Repository type: `Source code repository`
@@ -25,7 +25,7 @@ First, please run the `preparation.sh` script in this repository to create the D
 - Deployment trigger: `Manual`
 - In the build settings select `Use a configuration file`
 - Give this service a name 
-- In the `Security` section select the `votingapp-role` IAM role created by the `preparation.sh` script  
+- In the `Security` section (`Instance role`) select the `votingapp-role` IAM role created by the `prepare.sh` script  
 
 Please note that the `apprunner.yaml` configuration file set the `DDB_AWS_REGION` variable to `us-east-1`. If your DynamoDB table is in another region (and/or if you opted to create a table with a different name) please change/add the variables values accordingly in the file. 
 
