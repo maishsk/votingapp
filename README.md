@@ -13,6 +13,10 @@ In addition to vote, you can query the status by CURLing (or similar) the `/api/
 
 If you hit the `/` path of the service a summary of the various APIs available is provided. This path only serves static content and does not test DynamoDB connectivity. 
 
+This is a high level diagram of the application architecture:
+
+![votingapp-architecture](/images/votingapp-architecture.png)  
+
 
 ### How to set up the application
 
