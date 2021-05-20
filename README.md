@@ -33,6 +33,8 @@ First, please check the [preparation](/preparation) folder in this repository to
 - Give this service a name 
 - In the `Security` section (`Instance role`) select the `votingapp-role` IAM role created by the `prepare.sh` script  
 
+The last step is important because it is what grant this App Runner service access to the DynamoDB table. 
+
 Please note that the `apprunner.yaml` configuration file set the `DDB_AWS_REGION` variable to `us-east-1`. If your DynamoDB table is in another region (and/or if you opted to create a table with a different name) please change/add the variables values accordingly in the file. 
 
 
@@ -46,6 +48,13 @@ Please note that the `apprunner.yaml` configuration file set the `DDB_AWS_REGION
 #### Deploying the application with other services and platforms  
 
 This app has been created to test deployments to AWS App Runner. However this is a standard Python application you can use in any other context provided you adhere to the architecture and prerequisites. The application comes with its `requirements.txt` file and `Dockerfile`. 
+
+#### Known limitations and to-do
+
+- the `getheavyvotes` API doesn't really work as expected and it's WIP 
+- the script should ideally be turned into a CFN template with custom resources to initialize the DDB table
+- Even more ideally this could/should be all wrapped (App Runner service + DDB table) with a Copilot artifact
+- A simple UI to vote and query the votes is in the works
 
 
 #### Licensing

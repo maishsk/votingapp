@@ -12,7 +12,7 @@ aws dynamodb create-table \
     --billing-mode PAY_PER_REQUEST \
     --region $AWS_REGION 
 
-echo "waiting 10 seconds for the table to be available"
+echo "waiting a few seconds for the table to be available"
 sleep 10 
 
 aws dynamodb put-item \
